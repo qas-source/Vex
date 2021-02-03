@@ -12,6 +12,7 @@
 // [Name]               [Type]        [Port(s)]
 // Controller1          controller                    
 // Drivetrain           drivetrain    1, 2, 3, 4      
+// AllSeeing            vision        5               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -25,7 +26,9 @@ void spin () {
 }
 
 
+
 int main() {
+  thread(spin).detach();
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   // Drivetrain.driveFor(forward, 13, mm);
